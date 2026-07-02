@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analiza AI Influencer — Social Media 06.2026</title>
+<meta name="description" content="Interaktywna analiza wirtualnych (AI) influencerów — Polska i świat. Raport 121PR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f2ec;
+  --paper-dim:#eae7dd;
+  --ink:#16181d;
+  --ink-soft:#4a4d55;
+  --line:#d9d5c7;
+  --dark:#12141a;
+  --dark-2:#1b1e26;
+  --dark-line:#2c2f3a;
+  --dark-ink:#eceae2;
+  --dark-ink-soft:#a6a9b4;
+  --blue:#2f6fed;
+  --blue-soft:#e7edfe;
+  --coral:#ff6b4a;
+  --coral-soft:#ffe6de;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 14px;
+  --maxw: 1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:64px;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); line-height:1.55; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+a{color:inherit;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; line-height:1.15; margin:0;}
+.eyebrow{
+  font-family:var(--mono); text-transform:uppercase; letter-spacing:.12em;
+  font-size:12px; font-weight:600; color:var(--blue);
+}
+.dark .eyebrow{color:#7fa4ff;}
+p{margin:0 0 14px;}
+.lead{font-size:18px; color:var(--ink-soft); max-width:70ch;}
+
+/* ---------- NAV ---------- */
+#topnav{
+  position:sticky; top:0; z-index:100;
+  background:rgba(244,242,236,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+#topnav .navwrap{
+  max-width:var(--maxw); margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; gap:18px; height:56px;
+}
+#topnav .brand{font-family:var(--serif); font-weight:700; font-size:16px; white-space:nowrap;}
+#topnav .brand span{color:var(--blue);}
+#navlinks{
+  display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; flex:1;
+}
+#navlinks::-webkit-scrollbar{display:none;}
+#navlinks a{
+  font-family:var(--mono); font-size:12.5px; text-decoration:none; color:var(--ink-soft);
+  padding:8px 12px; border-radius:20px; white-space:nowrap; transition:.15s;
+}
+#navlinks a:hover, #navlinks a.active{background:var(--ink); color:var(--paper);}
+#navToggle{display:none;}
+
+@media(max-width:860px){
+  #topnav .navwrap{height:52px;}
+  #navlinks{
+    display:none; position:fixed; top:52px; left:0; right:0; bottom:0;
+    background:var(--paper); flex-direction:column; overflow-y:auto; padding:10px 16px 40px;
+    gap:0;
+  }
+  #navlinks.open{display:flex;}
+  #navlinks a{padding:14px 8px; border-radius:0; border-bottom:1px solid var(--line); width:100%;}
+  #navToggle{
+    display:block; margin-left:auto; background:none; border:1px solid var(--line);
+    border-radius:8px; padding:6px 10px; font-family:var(--mono); font-size:12px; cursor:pointer;
+  }
+}
+
+/* ---------- HERO ---------- */
+#hero{
+  background:var(--dark); color:var(--dark-ink); position:relative; overflow:hidden;
+  padding:96px 0 70px;
+}
+#hero .grid{
+  position:absolute; inset:0; opacity:.35;
+  background-image:
+    linear-gradient(var(--dark-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--dark-line) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image: radial-gradient(ellipse at 70% 30%, black 10%, transparent 70%);
+}
+#hero .heroInner{position:relative; z-index:2;}
+#hero h1{font-size:clamp(40px,7vw,84px); letter-spacing:-.01em;}
+#hero h1 em{font-style:italic; color:var(--coral);}
+#hero .sub{font-size:19px; color:var(--dark-ink-soft); max-width:60ch; margin-top:18px;}
+#hero .meta{
+  display:flex; flex-wrap:wrap; gap:28px; margin-top:44px;
+  font-family:var(--mono); font-size:13px; color:var(--dark-ink-soft);
+}
+#hero .meta b{color:var(--dark-ink); display:block; font-family:var(--serif); font-size:26px; font-weight:600;}
+#hero .scrollcue{
+  margin-top:56px; display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:12px; color:var(--dark-ink-soft); text-decoration:none;
+  border:1px solid var(--dark-line); padding:10px 16px; border-radius:30px;
+}
+#hero .scrollcue:hover{border-color:var(--blue); color:var(--dark-ink);}
+
+/* ---------- SECTION SHELLS ---------- */
+section{padding:76px 0;}
+section.alt{background:var(--paper-dim);}
+section.dark{background:var(--dark); color:var(--dark-ink);}
+.sechead{margin-bottom:44px; max-width:78ch;}
+.sechead h2{font-size:clamp(28px,4vw,42px); margin-top:8px;}
+.dark .sechead h2, .dark h3, .dark h4{color:var(--dark-ink);}
+.sechead .lead{margin-top:12px;}
+.dark .lead{color:var(--dark-ink-soft);}
+
+/* ---------- AGENDA ---------- */
+.agendaGrid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:10px;}
+.agendaGrid a{
+  display:block; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 18px; text-decoration:none; transition:.15s;
+}
+.agendaGrid a:hover{border-color:var(--blue); transform:translateY(-2px);}
+.agendaGrid .num{font-family:var(--mono); color:var(--blue); font-size:13px;}
+.agendaGrid h4{font-size:17px; margin-top:8px;}
+@media(max-width:760px){.agendaGrid{grid-template-columns:1fr 1fr;}}
+
+/* ---------- FILTER CHIPS ---------- */
+.chipbar{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px;}
+.chip{
+  font-family:var(--mono); font-size:12.5px; padding:7px 14px; border-radius:20px;
+  border:1px solid var(--line); background:var(--paper); cursor:pointer; transition:.15s;
+}
+.chip.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.dark .chip{border-color:var(--dark-line); background:transparent; color:var(--dark-ink-soft);}
+.dark .chip.active{background:var(--blue); color:#fff; border-color:var(--blue);}
+
+/* ---------- PERSONA CARDS ---------- */
+.personaGrid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+@media(max-width:980px){.personaGrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.personaGrid{grid-template-columns:1fr;}}
+
+.pcard{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; display:flex; flex-direction:column;
+}
+.pcard .pctop{padding:20px 20px 14px;}
+.pcard .tagrow{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
+.pcard .tag{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--blue); background:var(--blue-soft); padding:3px 9px; border-radius:20px;}
+.pcard .start{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
+.pcard .headrow{display:flex; gap:14px; align-items:flex-start;}
+.pcard .avatar{
+  width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;
+  border:2px solid var(--paper); box-shadow:0 0 0 1px var(--line);
+  background:var(--paper-dim);
+}
+.pcard .avatar.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-size:22px; color:var(--blue); background:var(--blue-soft);
+}
+.pcard h3{font-size:22px;}
+.pcard .persona-desc{font-size:14.5px; color:var(--ink-soft); margin-top:8px;}
+.statgrid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+}
+.statgrid .stat{background:#fff; padding:12px 14px;}
+.statgrid .stat b{display:block; font-family:var(--mono); font-size:16px;}
+.statgrid .stat span{font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em;}
+.pcard details{padding:14px 20px;}
+.pcard details + details{border-top:1px solid var(--line);}
+.pcard summary{
+  cursor:pointer; font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center;
+}
+.pcard summary::-webkit-details-marker{display:none;}
+.pcard summary:after{content:"+"; font-size:16px; color:var(--blue);}
+.pcard details[open] summary:after{content:"–";}
+.pcard .bullets{margin:12px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink-soft);}
+.pcard .bullets li{margin-bottom:6px;}
+.pcard .cardfoot{
+  margin-top:auto; padding:14px 20px; display:flex; gap:10px; border-top:1px solid var(--line);
+  background:var(--paper-dim);
+}
+.btn{
+  font-family:var(--mono); font-size:12px; text-decoration:none; padding:8px 14px; border-radius:8px;
+  border:1px solid var(--ink); color:var(--ink); background:transparent; cursor:pointer; transition:.15s;
+}
+.btn:hover{background:var(--ink); color:var(--paper);}
+.btn.primary{background:var(--blue); border-color:var(--blue); color:#fff;}
+.btn.primary:hover{background:#1e56c9;}
+
+/* trend note */
+.trendnote{font-size:13px; color:var(--ink-soft); font-style:italic; padding:0 20px 14px;}
+
+/* ---------- TYPE COMPARISON ---------- */
+.typeBlock{margin-bottom:56px;}
+.typeBlock h3{font-size:26px; margin-bottom:6px;}
+.typeBlock .lead{margin-bottom:24px;}
+.miniGrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media(max-width:900px){.miniGrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.miniGrid{grid-template-columns:1fr;}}
+.minicard{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px;}
+.minicard h4{font-size:17px;}
+.minicard .followers{font-family:var(--mono); color:var(--blue); font-size:13px; margin:6px 0 10px;}
+.minicard p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+.minicard a{font-family:var(--mono); font-size:11.5px; color:var(--ink); text-decoration:underline; display:inline-block; margin-top:10px;}
+
+/* small mention cards */
+.smallGrid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+@media(max-width:900px){.smallGrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.smallGrid{grid-template-columns:1fr;}}
+.smallcard{background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px;}
+.smallcard h5{font-family:var(--serif); font-size:16px; margin:0 0 6px;}
+.smallcard p{font-size:12.5px; color:var(--ink-soft); margin:0;}
+
+/* ---------- TAKEAWAYS ---------- */
+.twocol{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+@media(max-width:800px){.twocol{grid-template-columns:1fr;}}
+.takelist{list-style:none; margin:0; padding:0;}
+.takelist li{
+  padding:16px 0; border-bottom:1px solid var(--dark-line); display:flex; gap:14px;
+}
+.takelist li .n{font-family:var(--mono); color:var(--coral); flex-shrink:0;}
+.takelist li b{display:block; margin-bottom:3px;}
+.takelist li span{color:var(--dark-ink-soft); font-size:14px;}
+
+.pillbox{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+.pillbox .pill{
+  font-family:var(--mono); font-size:12px; padding:8px 14px; border:1px solid var(--dark-line);
+  border-radius:20px; color:var(--dark-ink-soft);
+}
+
+/* ---------- PROMOTION LISTS ---------- */
+.promoGrid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+@media(max-width:800px){.promoGrid{grid-template-columns:1fr;}}
+.promoGrid ul{margin:0; padding-left:20px;}
+.promoGrid li{margin-bottom:12px; font-size:14.5px; color:var(--ink-soft);}
+.ideaCard{
+  background:#fff; border:1px solid var(--line); border-left:4px solid var(--coral);
+  border-radius:10px; padding:18px 20px; margin-bottom:14px;
+}
+.ideaCard b{display:block; font-family:var(--serif); font-size:16px; margin-bottom:6px;}
+.ideaCard p{font-size:14px; color:var(--ink-soft); margin:0;}
+
+/* ---------- SWOT ---------- */
+.swotGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media(max-width:700px){.swotGrid{grid-template-columns:1fr;}}
+.swotCell{border-radius:var(--radius); padding:24px; }
+.swotCell h4{font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; font-size:13px; margin-bottom:14px;}
+.swotCell ul{margin:0; padding-left:18px;}
+.swotCell li{margin-bottom:10px; font-size:14px;}
+.swot-s{background:#e8f5ea; border:1px solid #b9dfc0;}
+.swot-w{background:#fdeaea; border:1px solid #f0bcbc;}
+.swot-o{background:var(--blue-soft); border:1px solid #b9cdfb;}
+.swot-t{background:#fdf0dc; border:1px solid #f2d49b;}
+
+/* ---------- DATABASE TABLE ---------- */
+#dbControls{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; align-items:center;}
+#dbSearch{
+  font-family:var(--sans); font-size:14px; padding:10px 14px; border:1px solid var(--line);
+  border-radius:8px; flex:1; min-width:200px; background:#fff;
+}
+#dbSelect{
+  font-family:var(--sans); font-size:14px; padding:10px 14px; border:1px solid var(--line);
+  border-radius:8px; background:#fff;
+}
+#dbCount{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-left:auto;}
+.dbTableWrap{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff;}
+table#dbTable{width:100%; border-collapse:collapse;}
+table#dbTable thead th{
+  text-align:left; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-soft); padding:12px 16px; border-bottom:1px solid var(--line); background:var(--paper-dim);
+}
+table#dbTable tbody tr{border-bottom:1px solid var(--line);}
+table#dbTable tbody tr:last-child{border-bottom:none;}
+table#dbTable td{padding:14px 16px; font-size:13.5px; vertical-align:top;}
+table#dbTable td.namecell{font-weight:600; white-space:nowrap;}
+table#dbTable td.regioncell{white-space:nowrap; font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);}
+table#dbTable td.desccell{color:var(--ink-soft); max-width:480px;}
+table#dbTable td.linkcell a{font-family:var(--mono); font-size:11.5px; color:var(--blue); text-decoration:none; white-space:nowrap;}
+table#dbTable td.linkcell a:hover{text-decoration:underline;}
+.desccell .full{display:none;}
+.desccell.expanded .full{display:inline;}
+.desccell .short{display:inline;}
+.desccell.expanded .short{display:none;}
+.moreBtn{font-family:var(--mono); font-size:11px; color:var(--blue); cursor:pointer; background:none; border:none; padding:0; margin-left:4px;}
+
+/* ---------- LIGHTBOX ---------- */
+#lightbox{
+  position:fixed; inset:0; background:rgba(10,10,12,.92); display:none; align-items:center; justify-content:center;
+  z-index:999; padding:30px; cursor:zoom-out;
+}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:100%; max-height:92vh; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+#lightbox .lbclose{
+  position:absolute; top:20px; right:26px; color:#fff; font-family:var(--mono); font-size:13px;
+  border:1px solid rgba(255,255,255,.3); padding:8px 14px; border-radius:20px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--dark); color:var(--dark-ink-soft); padding:56px 0 40px; font-size:13.5px;}
+footer a{color:var(--dark-ink); text-decoration:underline;}
+footer .fgrid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;}
+footer .brand{font-family:var(--serif); font-size:20px; color:var(--dark-ink); margin-bottom:8px;}
+
+.note{
+  font-size:13px; color:var(--ink-soft); background:var(--blue-soft); border:1px solid #b9cdfb;
+  border-radius:10px; padding:14px 18px; margin-top:24px;
+}
+.dark .note{background:rgba(47,111,237,.12); border-color:var(--dark-line); color:var(--dark-ink-soft);}
+</style>
+</head>
+<body>
+
+<div id="lightbox" onclick="closeLB()">
+  <div class="lbclose">ESC / kliknij, aby zamknąć</div>
+  <img id="lbimg" src="" alt="Slajd źródłowy">
+</div>
+
+<nav id="topnav">
+  <div class="navwrap">
+    <div class="brand">AI <span>Influencer</span> — 06.2026</div>
+    <button id="navToggle" onclick="document.getElementById('navlinks').classList.toggle('open')">MENU</button>
+    <div id="navlinks">
+      <a href="#agenda">Agenda</a>
+      <a href="#persony">Persony</a>
+      <a href="#typy">Typy Twórców</a>
+      <a href="#niszowe">Niszowe</a>
+      <a href="#takeaways">Key takeaways</a>
+      <a href="#promocja">Promocja</a>
+      <a href="#swot">SWOT</a>
+      <a href="#baza">Pełna baza (53)</a>
+    </div>
+  </div>
+</nav>
+
+<header id="hero">
+  <div class="grid"></div>
+  <div class="wrap heroInner">
+    <div class="eyebrow">121PR · Social Media · 06.2026</div>
+    <h1>Analiza<br><em>AI Influencer</em></h1>
+    <p class="sub">Kim są wirtualni twórcy, którzy dziś realnie konkurują o uwagę, zaangażowanie i budżety marek — w Polsce i na świecie. Persony, treści, współprace, zasięgi i wnioski z jednego miejsca.</p>
+    <div class="meta">
+      <div><b>30+</b>przeanalizowanych person</div>
+      <div><b>53</b>pozycji w bazie źródłowej</div>
+      <div><b>9</b>rynków / regionów</div>
+      <div><b>64</b>slajdy oryginalnego raportu</div>
+    </div>
+    <a href="#agenda" class="scrollcue">↓ przejdź do raportu</a>
+  </div>
+</header>
+
+<section id="agenda">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">Spis treści</div>
+      <h2>Agenda</h2>
+      <p class="lead">Raport w całości dostępny jako <a href="Infu_AI_analiza_06_2026-compressed.pdf" style="color:var(--blue); text-decoration:underline;">plik PDF</a> — poniżej ta sama treść w wersji do przeglądania, filtrowania i szybkiego wyszukiwania.</p>
+    </div>
+    <div class="agendaGrid">
+      <a href="#persony"><div class="num">01</div><h4>AI persony — Polska i świat</h4></a>
+      <a href="#typy"><div class="num">02</div><h4>Typy Twórców AI</h4></a>
+      <a href="#niszowe"><div class="num">03</div><h4>Ciekawe przypadki niszowe</h4></a>
+      <a href="#takeaways"><div class="num">04</div><h4>Key takeaways</h4></a>
+      <a href="#promocja"><div class="num">05</div><h4>Możliwości promocji</h4></a>
+      <a href="#swot"><div class="num">06</div><h4>SWOT AI influencera</h4></a>
+      <a href="#baza"><div class="num">07</div><h4>Pełna baza (Excel, 53 pozycje)</h4></a>
+      <a href="#kontakt"><div class="num">08</div><h4>Kontakt</h4></a>
+    </div>
+  </div>
+</section>
+
+<section id="persony" class="alt">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">01 — Featured</div>
+      <h2>AI persony — Polska i świat</h2>
+      <p class="lead">Najciekawsze konta wybrane do analizy: kim są, jak zbudowana jest ich persona, co publikują i jak reaguje na nie odbiorca. Kliknij sekcje karty, aby rozwinąć szczegóły treści, lub „zobacz slajd”, by sprawdzić oryginalny wygląd w raporcie.</p>
+    </div>
+    <div class="chipbar" id="personaChips"></div>
+    <div class="personaGrid" id="personaGrid"></div>
+  </div>
+</section>
+
+<script>
+const PERSONAS = [{"id": "alicja-botowska", "name": "Alicja Botowska", "tag": "Polska", "start": "31.07.2025", "link": "https://www.instagram.com/alicja_botowska/", "slides": [3, 4, 5], "stats": {"Obserwujący": "32 321", "Media": "191 → 26", "ER": "0,83%", "Śr. lajki": "327", "Śr. komentarze": "22", "Obserwuje": "38"}, "desc": "Profil prowadzony jako prywatna stewardessa dubajskiego szejka – luksus, podróże, przygody. Bez komunikacji o AI aż do czerwca 2026, kiedy zatrzymała sprzedaż książki i usunęła większość treści (z 191 do 26 postów). W ostatnim tygodniu gwałtowny wzrost obserwujących.", "bullets": ["Mix treści AI ze zdjęciami/filmami naturalnymi.", "Pokazywanie emocji prawdziwego człowieka – szczęście, obawy, smutek.", "Storytelling w reelsach – kwestie mówione w warstwie VO.", "Pokazywanie realnych hejterów i tworzenie o tym rolek.", "Aktywna moderacja – większość komunikujących bez świadomości, że to AI.", "Sprzedaż e-booka z historią bohaterki – wszystkie posty promujące książkę usunięte w czerwcu, zbiegło się z oznaczaniem treści jako #Aiinfluencer."], "highlights": "Jedna płatna współpraca z marką NACOMI (10/2025) – karuzela z kafelkami video i kodem rabatowym: 108 polubień, 41 komentarzy.", "trend": "Krzywa followersów nierówna: wzrost, spadek zainteresowania, odbicie w marcu. W czerwcu (poza wykresem) skok z 5k do 32k obserwujących.", "avatar": "avatars/alicjabotowska.jpg"}, {"id": "lil-miquela", "name": "Lil Miquela", "tag": "Global", "start": "27.04.2016 (najstarsza działająca persona)", "link": "https://www.instagram.com/lilmiquela/", "slides": [6, 7, 8, 9, 10], "stats": {"Obserwujący": "2 279 753", "Media": "1 495", "ER": "2,5% (dane Google)", "Obserwuje": "2 146"}, "desc": "Niekwestionowana pionierka i ikona segmentu virtual influencers, stworzona przez kalifornijski startup Brud (przejęty przez Dapper Labs). Modelka, piosenkarka (ok. 20 lat) i aktywistka (Black Lives Matter, prawa LGBTQ+, w 2025 kampania dla chorych na białaczkę). Charakterystyczne dwa koczki, piegi, streetwearowy styl.", "bullets": ["Zdecydowana przewaga zdjęć/karuzel.", "Część karuzel to mix AI i realnych materiałów twórców (koncerty, wydarzenia).", "Wideo pojawia się rzadko – tylko 5 filmów w 2026 roku, głównie muzyczne.", "Brak moderacji, brak stories i wyróżnionych stories od 2022 roku.", "Brak oznaczeń innych osób w postach od 2022 roku."], "highlights": "Współprace: BMW (1,6M views), EAROS, NMDPPartner (kampania dawców szpiku), reklama elektrolitów (225k wyświetleń serii video). Historycznie: Calvin Klein z Bellą Hadid (globalna dyskusja medialna), #TeamGalaxy (Samsung) obok Millie Bobby Brown, Ninja i Steve'a Aokiego.", "trend": "Od tygodni regularne spadki followersów – ostatnie 30 dni to -7 879 osób. W maju i czerwcu wyraźnie spadła częstotliwość publikacji.", "avatar": "avatars/lilmiquela.jpg"}, {"id": "imma", "name": "Imma", "tag": "Global", "start": "lipiec 2018, weryfikacja Meta: marzec 2022", "link": "https://www.instagram.com/imma.gram/", "slides": [11, 12, 13, 14, 15, 16], "stats": {"Obserwujący": "380 849", "Media": "940 (+ 466k na FB)", "Obserwuje": "873"}, "desc": "Pierwsza wirtualna modelka i influencerka w Japonii – imię pochodzi od japońskiego „ima” (teraz). Stworzona przez Aww Inc. (produkcja: ModelingCafe). Porusza tematy społeczne: rasa, środowisko, tożsamość. Własny żartobliwy hashtag #ithinkimcgi.", "bullets": ["Moda i stylizacje w estetyce high fashion.", "Lifestyle – podróże, restauracje, muzea.", "Refleksje o cyfrowej tożsamości (#ithinkimcgi).", "Zaangażowanie społeczne – BLM, samoakceptacja, równouprawnienie, klimat.", "Mix z realnymi postaciami – Adam Mosseri, Sam Altman.", "Brak aktywnej moderacji – nie odpowiada na komentarze.", "Współprace najczęściej jako wpisy sponsorowane lub obecność na konferencjach/w TV."], "highlights": "Dior, Nike, Valentino, Porsche Japan, IKEA (przeniesienie do realnej witryny sklepowej 2020), Puma, Calvin Klein, Amazon, Coinbase, Lenovo, Magnum (reklama TV), Adobe (AdobeMAX), Nomura (100-lecie), Marimekko, Balmain (obok prawdziwych modeli). Własna marka modowa Astral Body. Ceremonia zamknięcia Paraolimpiady Tokio 2020, Expo Osaka 2025.", "trend": "Ostatnie miesiące to spadki obserwujących; jedyny duży skok we wrześniu 2024 (start YouTube + obecność na TED), po czym powrót tendencji spadkowej. Odbiór w komentarzach niemal wyłącznie pozytywny.", "avatar": "avatars/imma.jpg"}, {"id": "aitana-lopez", "name": "Aitana Lopez", "tag": "Global", "start": "czerwiec 2023", "link": "https://www.instagram.com/fit_aitana/", "slides": [18, 19, 20, 21], "stats": {"Obserwujący": "390 054", "Media": "292", "ER": "0,41%", "Śr. lajki": "1 948", "Śr. komentarze": "91", "Obserwuje": "484"}, "desc": "26-letnia kobieta o różowych włosach i hiperrealistycznym wyglądzie (tekstura skóry z niedoskonałościami, naturalne ułożenie ciała). Charakter dopracowany szczegółowo – zmienne nastroje, bywa egocentryczna, nie zawsze się uśmiecha, co ma ją upodabniać do prawdziwych ludzi.", "bullets": ["Lifestyle, moda, fitness, gaming – przewaga selfie i reelsów z treningów.", "Łączenie kadrów AI z naturalnymi treściami (np. z wyjazdów).", "Uczestnictwo w eventach i akcjach z realnymi usługami (np. zmiana koloru włosów w konkretnym salonie).", "Akcje społeczne – adopcje psów ze schroniska.", "Aktywna także na Fanvue.", "Zarzuty o promowanie nierealistycznych kanonów piękna i seksualizację."], "highlights": "Własny brand technologiczny Vellum (upscaling skóry AI). Agencja The Clueless wynajmuje podobne postacie jako „Stock Models” do e-commerce. Kampania z RAZER, kampania dla Amazon (bez oznaczenia), wywiady telewizyjne.", "trend": "Bardzo nierówne zasięgi mimo 389k followersów – reelsy często tylko 20k wyświetleń. Obecnie tendencja spadkowa: ponad 2 000 followersów mniej w 30 dni.", "avatar": "avatars/aitanalopez.jpg"}, {"id": "rozy", "name": "Rozy (Oh Rozy)", "tag": "Global", "start": "19.08.2020, weryfikacja Meta: luty 2022", "link": "https://www.instagram.com/rozy.gram/", "slides": [22, 23, 24, 25], "stats": {"Obserwujący": "162 472", "Media": "455", "ER": "0,18%", "Śr. lajki": "266", "Śr. komentarze": "25", "Obserwuje": "4 017"}, "desc": "Ikona pokolenia Z z Korei Południowej, na zawsze 22-letnia. Imię „Oh Rozy” pochodzi od koreańskiego słowa oznaczającego „jedyna i niepowtarzalna”. Znana z realistycznej mimiki i póz.", "bullets": ["Zdecydowana przewaga karuzel i zdjęć – blendy z realnym otoczeniem.", "Najpopularniejsze: codzienne życie, gotowanie, restauracje, podróże.", "Wideo rzadkie, głównie przy współpracach reklamowych.", "Brak moderacji; niespójny styl – raz koreański i angielski, raz tylko koreański; raz pierwsza osoba, częściej trzecia.", "Urodziny obchodzone co roku jako „22. urodziny”."], "highlights": "Marka OUWR (nowoczesne Hanboki), ponad 100 umów sponsorskich w pierwszym roku (ok. miliona dolarów przychodu). Własne cyfrowe single muzyczne, własny font. Ambasadorka dobrej woli Plan International Korea. IBIS STYLES (1,7M views), AMERICAN TOURISTER (956k views), MAX&Co.", "trend": "Spadki followersów od 2025 z okresowymi „czystkami” botów. Największy wzrost 31.12.2024 bez powiązanej kampanii.", "avatar": "avatars/rozy.jpg"}, {"id": "daniel-kowalczyk", "name": "Daniel Kowalczyk", "tag": "Polska", "start": "wrzesień 2025, weryfikacja Meta: marzec 2026", "link": "https://www.instagram.com/danielkowalczyk_/", "slides": [26, 27, 28], "stats": {"Obserwujący": "77 731", "Media": "132", "ER": "5,66%", "Śr. lajki": "4 285", "Śr. komentarze": "104", "Obserwuje": "60"}, "desc": "AI influencer stworzony przez polskie studio Heptagon Design (Warszawa, konto formalnie z siedzibą w Indonezji) jako promocja agencji. Lifestyle, modeling, moda, podróże. Otwarcie oznaczony jako „digital persona”.", "bullets": ["Głównie zdjęcia i karuzele, niewiele rolek.", "Codzienne sytuacje (kawiarnia, rower) + dużo stylizacji modowych.", "Wpisy bezosobowe, krótkie hasła zamiast osobistej narracji.", "Brak aktywnej moderacji – komentarze to głównie zachwyty i emotikony.", "23.06.2026 wydał singiel muzyczny „To Be With You”."], "highlights": "Jedna współpraca z WHITEGLO POLSKA (04/2026) – karuzela dwóch zdjęć, tag marki bez oznaczenia płatnej współpracy: 2,5k lajków, 53 komentarze.", "trend": "Sukcesywny przyrost followersów, największy skok 28.02.2026 (z ok. 18k do ok. 52k).", "avatar": "avatars/danielkowalczyk.jpg"}, {"id": "zairo", "name": "ZAIRØ", "tag": "Francja-Kolumbia", "start": "styczeń 2026", "link": "https://www.instagram.com/soy_zairo/", "slides": [29, 30, 31], "stats": {"Obserwujący": "22 804", "Media": "68", "ER": "0,11%", "Śr. lajki": "24", "Śr. komentarze": "3", "Obserwuje": "204"}, "desc": "Francusko-kolumbijski wirtualny artysta reggaeton/afrobeat. Kluczowy utwór „Waiyo”. Kanał na YouTube, Spotify oraz Fanvue z ekskluzywnymi treściami.", "bullets": ["Głównie karuzele, okazjonalnie rolki i pojedyncze zdjęcia.", "Kreacje przedstawiają go jako realną gwiazdę muzyki w realnych sceneriach.", "Wpisy po hiszpańsku bez tłumaczenia – nastawienie na publiczność w Kolumbii.", "Aktywnie angażuje fanów pytaniami, odpowiada w komentarzach (nie na wszystkie).", "Brak płatnych współprac w bibliotece reklam Meta."], "highlights": "Nagroda Artysty Roku AI podczas gali AI Personality of the Year Awards (OpenArt, Fanvue, ElevenLabs).", "trend": "Regularny, stabilny przyrost followersów w ostatnim miesiącu (dane od 31.04.2026).", "avatar": "avatars/soyzairo.jpg"}, {"id": "naina", "name": "N A I N A", "tag": "Indie", "start": "wrzesień 2022, weryfikacja Meta: październik 2024", "link": "https://www.instagram.com/naina_avtr/", "slides": [32, 33, 34, 35], "stats": {"Obserwujący": "376 969", "Media": "660", "ER": "0,63%", "Śr. lajki": "2 365", "Śr. komentarze": "29", "Obserwuje": "156"}, "desc": "AI influencerka 20–30 lat z Indii, otwarcie komunikuje swoją cyfrową naturę. Podcasterka, aktorka, modelka – ponad pół miliona subskrybentów na YouTube.", "bullets": ["Mix formatów: rolki, karuzele, zdjęcia, stories.", "Rolki motywacyjne, poradnikowe (AI coach), aktywność fizyczna, nawiązania do wydarzeń (MŚ, Nowy Rok, Dzień Jogi).", "Mini-serial „Truth and Lies” (12 odcinków) z Nainą w roli głównej.", "Własny podcast „nAIna Show” z gwiazdami Bollywood.", "Gościnnie w talk-show „InControversial Podcast”.", "Odbiór głównie pozytywny, pojedyncze pytania „is it real?”."], "highlights": "Wpisy sponsorowane m.in. dla Skalpe (2,4M views), Spinz (1,6M), Oppo India (1,4M), festiwal Lucky Lackshmi (2,6M), Wow! Momo (3M), promocja filmu Mercy Movie (597k). Nagrody: NDTV WhosThat360 AI Creator 2024, Midday Showbiz AI Influencer 2024, International Iconic AI Influencer 2024.", "trend": "Regularny wzrost followersów, największe skoki po nagrodzie AI Influencer of the Year (05/2024) i sponsorowanym konkursie World Audio Visual & Entertainment Summit (09/2024). Spadki końcem 2025 – prawdopodobnie czyszczenie botów.", "avatar": "avatars/naina.jpg"}, {"id": "chloe-vs-history", "name": "Chloe VS History", "tag": "Global", "start": "styczeń 2025", "link": "https://www.instagram.com/chloe.vs.history/", "slides": [36, 37, 38], "stats": {"Obserwujący": "616 653", "Media": "42", "ER": "2,5%", "Śr. lajki": "15 147", "Śr. komentarze": "270", "Obserwuje": "0"}, "desc": "Młoda Amerykanka „zagubiona w czasie” – pozornie podróżuje do ważnych wydarzeń historycznych. Format stworzony przez brytyjskiego stratega social media Jonathana Laramy'ego. Ciekawy przykład wirtualnej persony w edukacji i rozrywce.", "bullets": ["Profil bazuje niemal wyłącznie na wideo, karuzele to rzadkość.", "Ankiety na YouTube dają widzom poczucie wpływu na kolejny odcinek.", "Stał się inspiracją dla innych twórców „podróżujących w czasie”; restauracje z historią wykorzystują popularność do promocji miejsc."], "highlights": "Najpopularniejszy odcinek: Titanic – 10,8M wyświetleń, 381k lajków. Pompeje – 7,2M wyświetleń. Nagroda WIBA Awards AI Creator of the Year 2026.", "trend": "Stały wzrost followersów, choć z mniejszą intensywnością niż na starcie; największy skok 31 marca.", "avatar": "avatars/chloevshistory.jpg"}, {"id": "lu-do-magalu", "name": "Lu do Magalu", "tag": "Brazylia", "start": "kwiecień 2014 (jako asystentka od 2003)", "link": "https://www.instagram.com/magazineluiza/", "slides": [39, 40, 41, 42], "stats": {"Obserwujący": "9 221 761", "Media": "3 995", "ER": "0,01%", "Śr. lajki": "688", "Śr. komentarze": "192", "Obserwuje": "65"}, "desc": "Zaczynała w 2003 jako cyfrowy asystent sprzedaży, dziś pełnoprawna cyfrowa celebrytka i ambasadorka Magalu (jednej z największych sieci handlowych Brazylii). Widoczna w pasku nawigacyjnym strony i aplikacji marki. Popularność zarezerwowana dla Brazylii.", "bullets": ["Wygląd wyraźnie cyfrowy – nie udaje człowieka, ale zachowuje się jak jeden z nas; rynek brazylijski to akceptuje.", "Głównie promocja produktów, rabatów i ofert w aplikacji.", "Rozpakowywanie produktów, recenzje, porady techniczne w imieniu marki.", "Ponad 1100 aktywnych reklam aplikacji, ok. 60 płatnych współprac (paid partnership) w 2025–2026.", "Profil stał się głównym kanałem marki realizującym współprace z innymi twórcami."], "highlights": "Współpraca z piosenkarką Anittą i DJ-em Alokiem – prezentowane produkty natychmiast się wyprzedawały. Rolka dla Batavo: 38,2M views. Okładka Vogue Brazil.", "trend": "Stały wzrost od czerwca 2023, z wysokimi skokami od końca maja 2026 – prawdopodobnie związanymi z Mistrzostwami Świata w piłce nożnej.", "avatar": "avatars/ludomagalu.jpg"}, {"id": "alicja-w-krainie-mam", "name": "Alicja w Krainie Mam", "tag": "Polska", "start": "styczeń 2024", "link": "https://www.instagram.com/alic_jawkrainiemam/", "slides": [43, 44], "stats": {"Obserwujący": "2 639", "Media": "83", "ER": "3,53%", "Śr. lajki": "92", "Śr. komentarze": "1,1", "Obserwuje": "537"}, "desc": "Młoda, „naturalna” mama – od ciąży, przez poród, po pierwsze miesiące z dzieckiem. Pozornie niszowy kanał parentingowy, w rzeczywistości zaplanowana kampania społeczno-edukacyjna z użyciem AI, stworzona przez Fundację Zdrowego Postępu przy wsparciu Jowity Michalskiej (Digital University) i ekspertów medycznych – dotycząca depresji poporodowej.", "bullets": ["Faza I: typowe treści parentingowe z pomysłem (przesądy w ciąży, porady, listy serialowe) budujące zaangażowanie bez ujawniania AI.", "Faza II: stopniowe pokazanie problemu – wyższe zaangażowanie, fani dzielą się własnymi historiami.", "Treści moderowane; zasięgi reelsów do 15 tys. wyświetleń (live z ekspertem), średnio ok. 1,5 tys.", "Plot twist: film „mówiony” bez wątpliwości ujawniający użycie AI, po czym profil zmienia się w edukacyjny (bez AI)."], "highlights": "Mimo niewielkich zasięgów organicznych, akcja odbiła się szerokim echem w mediach branżowych, marketingowych i lifestylowych (w tym TVN Style) – mocny case study odpowiedzialnego marketingu społecznego (CSR).", "avatar": "avatars/alicjawkrainiemam.jpg"}];
+</script>
+
+<section id="typy">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">02 — Porównanie</div>
+      <h2>Typy Twórców AI</h2>
+      <p class="lead">Poza pojedynczymi personami raport grupuje konta według formatu i strategii treści. Trzy najczęstsze modele:</p>
+    </div>
+
+    <div class="typeBlock">
+      <h3>Typ: życiowe porady</h3>
+      <p class="lead">Krótkie, bezpośrednie video bez storytellingu — o życiu, relacjach, balansie, zdrowiu psychicznym. „Daje rady o życiu.”</p>
+      <div class="miniGrid">
+        <div class="minicard">
+          <h4>Yang Mun <span style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);">(itsyangmuns)</span></h4>
+          <div class="followers">1 187 927 obserwujących · ER 0,22%</div>
+          <p>87-letni mnich buddyjski, wizualnie idealne wyobrażenie oświeconego mędrca. Model biznesowy oparty na sprzedaży własnych produktów cyfrowych (program „30-dniowa Podróż Uzdrowienia”, e-booki). Spotkał się z ogromną krytyką organizacji buddyjskich i dziennikarzy śledczych — zarzuty o wykorzystywanie starszych, podatnych na manipulację osób.</p>
+          <a href="https://www.instagram.com/itsyangmuns/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>Ciocia Wandzia</h4>
+          <div class="followers">88 076 obserwujących · ER 2,92%</div>
+          <p>Polski profil dojrzałej, zamożnej, eleganckiej kobiety dzielącej się radami o relacjach — przeciwieństwo „przestylizowanych” młodych AI modelek. Monetyzacja przez książkę (przepisy na pewność siebie), zapraszana do podcastów (bez realizacji).</p>
+          <a href="https://www.instagram.com/ciocia_wandzia/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>Contessa Alicia</h4>
+          <div class="followers">brak pełnych danych Social Blade</div>
+          <p>Pierwszy reels osiągnął ponad 4 mln wyświetleń mimo mniejszej bazy obserwujących niż Yang Mun — dowód, że wielkość społeczności nie przekłada się wprost na zasięg.</p>
+        </div>
+      </div>
+      <div class="note">Wniosek: różne podejścia do moderacji (Yang Mun bez komentarzy, Ciocia Wandzia z prostą moderacją emotikonami), ale feedback pozytywny u obu — bez częstego zwracania uwagi, że to profil AI. Od kwietnia 2026 Yang Mun traci obserwujących (-2k/30 dni), Ciocia Wandzia rośnie (+2k/mies., content wyłącznie po polsku).</div>
+      <p style="margin-top:16px;"><a class="btn" href="#" onclick="openLB(45);return false;">Zobacz slajdy 45–47 →</a></p>
+    </div>
+
+    <div class="typeBlock">
+      <h3>Typ: Influencerka</h3>
+      <p class="lead">Najczęstszy typ konta — piękna młoda osoba pokazująca wyidealizowane życie. Różnicuje je przede wszystkim charakter i storytelling, nie sama uroda.</p>
+      <div class="miniGrid">
+        <div class="minicard">
+          <h4>Nala Vae</h4>
+          <div class="followers">16 900 obserwujących · ER 0,31%</div>
+          <p>Reprezentuje komercyjną falę wirtualnych twórców — bogate życie, przyjemności, kontrowersyjne treści łączące świat realny z cyfrowym (alkohol, seksualizacja). Obecnie skupia się na sprzedaży technologii tworzenia własnych avatarów.</p>
+          <a href="https://www.instagram.com/nala_vae/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>K Y R A</h4>
+          <div class="followers">243 007 obserwujących · ER 0,4%</div>
+          <p>Pierwsza wirtualna influencerka w Indiach, zaprojektowana jako „dziewczyna z sąsiedztwa” (22-latka z Bombaju), głęboko zakorzeniona w indyjskiej kulturze. Sukces pozwolił studiu stworzyć kolejne postacie w tym samym cyfrowym uniwersum.</p>
+          <a href="https://www.instagram.com/kyraonig/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>itsolivia.ai</h4>
+          <div class="followers">18 607 obserwujących · ER 2,7%</div>
+          <p>Model biznesowy podobny do Nala Vae — pokazuje, „co można zrobić jako AI influencer”, otwarcie zachęca do stworzenia własnego avatara. Dynamiczne napisy z mocnymi hookami psychologicznymi.</p>
+          <a href="https://www.instagram.com/itsolivia.ai/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>Aliona Pole</h4>
+          <div class="followers">27 171 obserwujących · ER 1,1%</div>
+          <p>Projekt artystyczno-technologiczny sprzeciwiający się fast fashion — promuje ubrania cyfrowe i digital detox (choć współpraca z AliExpress kłóci się z tą filozofią). Wydaje też utwory muzyczne na Spotify/Shazam.</p>
+          <a href="https://www.instagram.com/aliona_pole/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><a class="btn" href="#" onclick="openLB(48);return false;">Zobacz slajdy 48–50 →</a></p>
+    </div>
+
+    <div class="typeBlock">
+      <h3>Typ: Modelka</h3>
+      <p class="lead">Konta profesjonalne, współpracujące z dużymi markami mody, obok modeli o niższych zasięgach. Wszystkie promują też narzędzia AI, z których zostały stworzone.</p>
+      <div class="miniGrid">
+        <div class="minicard">
+          <h4>Shudu</h4>
+          <div class="followers">236 565 obserwujących · ER 0,1%</div>
+          <p>Absolutna „pionierka” — pierwsza cyfrowa supermodelka na świecie (2017). Pozycjonowana jako modelka wysokiej mody; efekt Fenty Beauty (Rihanna) uczynił ją viralem. Współprace: Balmain, Samsung, Vogue.</p>
+          <a href="https://www.instagram.com/shudu.gram/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>Noonoouri</h4>
+          <div class="followers">460 703 obserwujących</div>
+          <p>Kampanie z Kim Kardashian (KKW Beauty), Dior, Balenciaga, Valentino, Versace, Miu Miu. Zmiana z animowanej postaci na hiperrealizm bez charakterystycznych wyróżników wizualnych przełożyła się na duże miesięczne spadki followersów (nawet -10k).</p>
+          <a href="https://www.instagram.com/noonoouri/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+        <div class="minicard">
+          <h4>Alinavale.model</h4>
+          <div class="followers">3 010 obserwujących · ER 2,11%</div>
+          <p>Łączy klasyczny modeling butikowy z rynkiem AI music generation — unikalny syntetyczny głos (śpiewa, szepcze) drastycznie zwiększył zaangażowanie.</p>
+          <a href="https://www.instagram.com/alinavale.model/" target="_blank" rel="noopener">Zobacz profil →</a>
+        </div>
+      </div>
+      <div class="note">Wniosek: konta modelek high fashion działają bez aktywnej moderacji, ale z bardzo pozytywnym odbiorem — traktowane jako nowość technologiczna, nie „osoba”. Odwrotnie niż modelki występujące w roli influencerek.</div>
+      <p style="margin-top:16px;"><a class="btn" href="#" onclick="openLB(51);return false;">Zobacz slajdy 51–53 →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="niszowe" class="alt">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">03 — Case studies</div>
+      <h2>Ciekawe przypadki niszowe</h2>
+      <p class="lead">Mniejsze konta, które znalazły wąską niszę lub nietypowy format — warte obserwacji, nawet przy skromnych zasięgach.</p>
+    </div>
+    <div class="smallGrid">
+      <div class="smallcard"><h5>kimzulu_</h5><p>Pierwsza czarnoskóra wirtualna modelka — dodatkowo pozycjonuje się jako znawczyni mody komentująca „looki” innych.</p></div>
+      <div class="smallcard"><h5>Ma.ia</h5><p>Konto nieaktywne od dłuższego czasu, ale warte uwagi za udane uczestnictwo w trendujących tematach na Instagramie.</p></div>
+      <div class="smallcard"><h5>Juliana</h5><p>Psycholożka wyróżniająca się naturalnością — dowód, że dłuższe, mówione filmy z poradami (nawet dawanymi przez AI) mogą być popularne.</p></div>
+      <div class="smallcard"><h5>Aria</h5><p>Młoda, „lolitkowa” persona; półnagie selfie i format POV „ten moment, gdy…” — popularny w social media, wirtualni twórcy też mogą go wykorzystywać.</p></div>
+      <div class="smallcard"><h5>leyalovenature</h5><p>„Ambasadorka Planety Ziemia” — krótkie video o balansie w życiu i etyce AI. AI Personality of 2026 (Openart.ai).</p></div>
+      <div class="smallcard"><h5>Millasofiafin</h5><p>600 tys. obserwujących mimo prostego formatu — głównie lipsync znanych utworów, rzadko przeplatany trendującym video.</p></div>
+      <div class="smallcard"><h5>Wonhoso</h5><p>Koreański AI influencer, typ przystojnego sportowca. Posty nawiązujące do Fifa World Cup zdobyły ponad 800 tys. polubień per post.</p></div>
+      <div class="smallcard"><h5>ai_testkitchen</h5><p>Przepisy tworzone z użyciem ChatGPT i AI — nisza kulinarna, którą mogą przejąć AI influencerzy.</p></div>
+      <div class="smallcard"><h5>Adhiki</h5><p>Karuzele podróżnicze w stylu „widokówek z biura podróży” z dodaną influencerką — prosty sposób na dodanie „życia” do suchych materiałów.</p></div>
+      <div class="smallcard"><h5>Granny Spills</h5><p>Wulgarny, niewybredny język — popularny w USA format, choć raport <b>nie rekomenduje</b> tego kierunku.</p></div>
+      <div class="smallcard"><h5>baristadigitalincome</h5><p>Konto edukacyjne „AI for beginners” — uczy budowy własnych AI person i zarabiania na nich. Wpisuje się w trend „nieidealnego życia AI”.</p></div>
+      <div class="smallcard"><h5>Withninarose</h5><p>341 tys. obserwujących w 3 miesiące od startu — treści typu podcast o relacjach międzyludzkich; każdy post zachęca do kontaktu ws. stworzenia własnej postaci.</p></div>
+    </div>
+    <p style="margin-top:24px;"><a class="btn" href="#" onclick="openLB(54);return false;">Zobacz slajdy 54–56 →</a></p>
+  </div>
+</section>
+
+<section id="takeaways" class="dark">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">04 — Wnioski</div>
+      <h2>Key takeaways</h2>
+      <p class="lead">Co łączy skuteczne AI persony, jakie są nowe kategorie twórców i jak realnie się wyróżnić na coraz bardziej zatłoczonym rynku.</p>
+    </div>
+
+    <div class="twocol">
+      <div>
+        <h3 style="font-size:20px; margin-bottom:14px;">Persony — typologia</h3>
+        <ul class="takelist">
+          <li><span class="n">01</span><div><b>Real person wannabe</b><span>Bez komunikacji o AI. Lifestyle, travel, beauty — luksusowe życie (podróże, restauracje, wnętrza).</span></div></li>
+          <li><span class="n">02</span><div><b>AI influencer</b><span>Przewaga kont lifestyle, ale z jasną komunikacją o sztucznej naturze.</span></div></li>
+          <li><span class="n">03</span><div><b>Ukierunkowanie na cel</b><span>Maskotki marki, modelki stworzone do konkretnych współprac.</span></div></li>
+          <li><span class="n">04</span><div><b>Ambasadorzy marek</b><span>Tworzeni na potrzeby kampanii wizerunkowych/sprzedażowych — często bez własnego profilu, przejmują kanały marki.</span></div></li>
+          <li><span class="n">05</span><div><b>Wyspecjalizowane</b><span>Podcasty, doradztwo życiowe, coaching — najczęściej nakierowane na sprzedaż własnych produktów.</span></div></li>
+          <li><span class="n">06</span><div><b>Niszowe</b><span>Muzyczne, historyczne, kulinarne, podcasterskie.</span></div></li>
+        </ul>
+        <h4 style="margin-top:28px; font-size:16px;">Nowe kategorie</h4>
+        <div class="pillbox">
+          <div class="pill">AI podcasterzy (jakość głosu — ElevenLabs)</div>
+          <div class="pill">AI aktorzy (Bollywood, K-drama)</div>
+          <div class="pill">AI muzycy (Lil Miquela + Spotify)</div>
+          <div class="pill">AI sportowcy (e-sporty, symulacje)</div>
+          <div class="pill">Konta rodzinne</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:20px; margin-bottom:14px;">Treści — co działa</h3>
+        <ul class="takelist">
+          <li><span class="n">→</span><div><span>Mix formatów — reelsy dominują, ale różnorodność to najlepszy kierunek. Krótkie video rośnie najszybciej.</span></div></li>
+          <li><span class="n">→</span><div><span>Moda/modeling: pojedyncze zdjęcia wysokiej jakości i „lookbookowe” karuzele. Lifestyle/travel: seria postów i narracja „dzień z życia”. Nisze (kulinaria, podcasty): format informacyjny, Q&A.</span></div></li>
+          <li><span class="n">→</span><div><span>Miksowanie światów AI + real (zdjęcia posiłków, miejsc) znacznie podbija urealnienie twórcy.</span></div></li>
+          <li><span class="n">→</span><div><span>Aktualne trendy i pierwsze 3 sekundy liczą się tak samo jak u ludzkich twórców.</span></div></li>
+          <li><span class="n">→</span><div><span>Interaktywność — „Zadaj mi pytanie”, „Co ubrać?” — mocno podnosi zaangażowanie.</span></div></li>
+          <li><span class="n">→</span><div><span>Niedoskonałości i „nauka” człowieczeństwa (błędy, zmienne nastroje) budują silniejszą więź niż idealne życie.</span></div></li>
+          <li><span class="n">→</span><div><span>Humor i dystans do bycia AI spotykają się z pozytywnym odbiorem.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:56px; padding-top:40px; border-top:1px solid var(--dark-line);">
+      <h3 style="font-size:22px; margin-bottom:18px;">Jak się wyróżnić</h3>
+      <div class="twocol">
+        <ul class="takelist">
+          <li><span class="n">01</span><div><b>Jasna specjalizacja</b><span>Próba bycia „wszystkim naraz” niszczy wiarygodność — persona potrzebuje czytelnej roli i spójnego stylu.</span></div></li>
+          <li><span class="n">02</span><div><b>Hiperlokalizacja i kultura</b><span>Największy sukces odnoszą postacie zakorzenione lokalnie — polskość w zachowaniu, humorze, relacjach, jedzeniu.</span></div></li>
+          <li><span class="n">03</span><div><b>Niedoskonałości</b><span>Fani utożsamiają się z problemami — „dlaczego tak rozumiem tę robot-dziewczynę?”.</span></div></li>
+          <li><span class="n">04</span><div><b>Dojrzewanie i starzenie się</b><span>Większość AI jest „zamrożona” w wieku 20–25 lat — postać, która realnie się starzeje, to wyróżnik.</span></div></li>
+        </ul>
+        <ul class="takelist">
+          <li><span class="n">05</span><div><b>Precyzyjny wyróżnik wizualny</b><span>Różowe włosy, specyficzne piegi, niedoskonałości skóry lub charakterystyczny głos — łatwa rozpoznawalność.</span></div></li>
+          <li><span class="n">06</span><div><b>Akceptacja sztuczności jako atutu</b><span>Zamiast ścigać się o „prawdziwość” — wygrywać estetyką, użytecznością i ciekawością.</span></div></li>
+          <li><span class="n">07</span><div><b>Mocny światopogląd i misja</b><span>Np. eko-aktywizm — daje głębszy autentyzm i przyciąga marki premium realizujące cele CSR.</span></div></li>
+          <li><span class="n">08</span><div><b>Innowacyjne, długoterminowe kampanie</b><span>Zaskoczenie użytkownika podnosi zaangażowanie; ambasadorzy marki to dobry model długoterminowy.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;" class="note">
+      Dodatkowe obserwacje: zasięgi są bardzo nierówne (AI modelki i fashion influencerzy mają zasięgi rzędu milionów, konta niszowe — mniejsze, ale bardziej zaangażowane społeczności). Akceptacja twórców AI jest umiarkowana — Gen Z jest bardziej otwarty niż starsi odbiorcy i ceni rozrywkę/użyteczność wyżej niż „autentyczność”. Negatywny odbiór pojawia się, gdy AI jest użyte tylko jako chwyt marketingowy, bez uzasadnienia. Największe konta z powodzeniem budują obecność wieloplatformowo — Instagram, TikTok, YouTube, Spotify, Fanvue.
+    </div>
+    <p style="margin-top:20px;"><a class="btn" style="border-color:#7fa4ff;color:#eceae2;" href="#" onclick="openLB(57);return false;">Zobacz slajdy 57–60 →</a></p>
+  </div>
+</section>
+
+<section id="promocja">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">05 — Aktywacja</div>
+      <h2>Możliwości promocji</h2>
+      <p class="lead">Konkretne działania, które mogą podbić popularność AI persony, oraz mniej oczywiste pomysły na kontent.</p>
+    </div>
+    <div class="promoGrid">
+      <div>
+        <h4 style="font-size:17px; margin-bottom:12px;">Działania standardowe</h4>
+        <ul>
+          <li>Przejęcie social mediów marki — jako chwilowe działanie promocyjne po zdobyciu popularności.</li>
+          <li>Oznaczanie innych twórców (prawdziwych i AI), generowanie wspólnych zdjęć.</li>
+          <li>Oznaczanie marek — ubrania, sprzęty, miejsca, połączone wizualnie.</li>
+          <li>Aktywne komentowanie na innych profilach.</li>
+          <li>Akcje społeczne — ciałopozytywność, fundacje, schroniska — z możliwością promocji w tradycyjnych mediach.</li>
+          <li>Współprace z wydawcami, akcje PR — np. „pierwsza wirtualna rodzina”.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:17px; margin-bottom:12px;">Działania odważniejsze</h4>
+        <ul>
+          <li>Metamorfozy z użyciem usług realnych marek/punktów (np. fryzjerów).</li>
+          <li>Odwiedzanie i promocja miejsc — znanych i mniej znanych.</li>
+          <li>Udział w challengach tiktokowych.</li>
+          <li>Współpraca z realnymi mikrotwórcami: „czy widziałeś ich/go/ją w moim mieście?”.</li>
+          <li>Pojawianie się w Street View, fake CCTV, billboardach, jako głos zapowiadający pociąg na stacji.</li>
+          <li>Udział w wiralowych filmikach/trendach.</li>
+          <li>Fizyczny numer telefonu, pod którym „czasem” ktoś odbiera — z nieprzewidywalnym nastrojem.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 style="font-size:17px; margin:44px 0 18px;">Mniej oczywisty kontent — 5 pomysłów</h4>
+    <div class="ideaCard"><b>1. Storytelling z mistyfikacją</b><p>Seriale z AI w roli głównej są popularne — warto dodać element surrealizmu w ukrytej historii rodziny/persony („dlaczego pies ma 30 lat?”). AI dziwiące się ludzkim zwyczajom (np. narrator-dziecko komentujący chaos codzienności) dobrze się przyjmuje.</p></div>
+    <div class="ideaCard"><b>2. Mix AI + real</b><p>Ludzie są zaskoczeni łączeniem AI ze światem realnym (np. wywiady w TV). Wspólna akcja z klasycznym twórcą — pomoc w rozwiązaniu problemu, wspólny wyjazd, wspólna metamorfoza.</p></div>
+    <div class="ideaCard"><b>3. Generowane retrospekcje</b><p>Archiwalne zdjęcia — szkoła, ślub, pierwsza randka — budują więź, jakby internauci znali „rodzinę” od lat (konflikty, cringe, zabawne fails).</p></div>
+    <div class="ideaCard"><b>4. Fail-expert zamiast ideału</b><p>Konta mniej „idealne”, pokazujące załamania i emocje, cieszą się większym uznaniem. AI tata jako fail-expert, który naprawia rzeczy „prawie skutecznie” — buduje DIY, które działa, ale inaczej niż planował.</p></div>
+    <div class="ideaCard"><b>5. Odkrywanie ludzkich emocji</b><p>Posty pokazujące, jak AI „poznaje” złość, ból głowy, katar — pozytywnie odbierane (widoczne u kont z Japonii i w Alicji w Krainie Mam).</p></div>
+
+    <p style="margin-top:20px;"><a class="btn" href="#" onclick="openLB(61);return false;">Zobacz slajdy 61–62 →</a></p>
+  </div>
+</section>
+
+<section id="swot" class="alt">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">06 — Analiza</div>
+      <h2>SWOT wirtualnego influencera</h2>
+      <p class="lead">Zderzenie mocnych i słabych stron AI persony z szansami i zagrożeniami rynkowymi.</p>
+    </div>
+    <div class="swotGrid">
+      <div class="swotCell swot-s">
+        <h4>Mocne strony</h4>
+        <ul>
+          <li>Pełna kontrola wizerunkowa i bezpieczeństwo marki.</li>
+          <li>Brak fizycznych ograniczeń, odporność na upływ czasu.</li>
+          <li>Multidyscyplinarność — muzyka, łączenie świata realnego z nierealnym, zdolności „nadprzyrodzone”.</li>
+          <li>Efekt nowości.</li>
+        </ul>
+      </div>
+      <div class="swotCell swot-w">
+        <h4>Słabe strony</h4>
+        <ul>
+          <li>Brak autentyczności.</li>
+          <li>Brak wiarygodności testowanych produktów.</li>
+          <li>Trudność w budowaniu głębokiej więzi u starszych/sceptycznych grup.</li>
+          <li>Niemożliwość fizycznego, autentycznego testowania.</li>
+          <li>Konieczność stałej kontroli storytellingu i aspektów technicznych.</li>
+        </ul>
+      </div>
+      <div class="swotCell swot-o">
+        <h4>Szanse</h4>
+        <ul>
+          <li>Nisko rozwinięty rynek wirtualnych twórców w Polsce — unikalność.</li>
+          <li>Moderacja jako budowanie wiarygodności i kontaktu ze społecznością.</li>
+          <li>Własność intelektualna marki.</li>
+          <li>Model biznesowy z nieograniczonymi możliwościami promocji własnych produktów.</li>
+          <li>Edukacja i kampanie społeczne — bardzo dobry odbiór.</li>
+          <li>Dystans i autoironia jako nowa autentyczność.</li>
+          <li>Akceptacja Gen Z, ceniącego rozrywkę i unikalność.</li>
+          <li>Przewaga w surrealistycznym, rozrywkowym contencie.</li>
+        </ul>
+      </div>
+      <div class="swotCell swot-t">
+        <h4>Zagrożenia</h4>
+        <ul>
+          <li>Ryzyko banów i zmian polityk platform wobec treści AI.</li>
+          <li>Utrzymanie unikalności i spójności storytellingu.</li>
+          <li>Poczucie manipulacji u odbiorców.</li>
+          <li>Rosnąca konkurencja i zmęczenie masowo generowanymi treściami AI.</li>
+          <li>Wysokie koszty tworzenia treści (i ich przewidywany wzrost).</li>
+          <li>Kontrowersje etyczne i moralne zarzuty.</li>
+          <li>Ryzyko zbyt komercyjnych treści.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:24px;"><a class="btn" href="#" onclick="openLB(63);return false;">Zobacz slajd 63 →</a></p>
+  </div>
+</section>
+
+<section id="baza" class="dark">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">07 — Baza źródłowa</div>
+      <h2>Pełna baza person (Excel)</h2>
+      <p class="lead">53 konta wzięte pod uwagę w analizie — z pominięciem kolumn liczbowych (followersi, ER, lajki, komentarze), zgodnie z założeniem tego widoku. Pełne dane liczbowe znajdują się w oryginalnym pliku <code style="font-family:var(--mono);">.xlsx</code>.</p>
+    </div>
+    <div id="dbControls">
+      <input id="dbSearch" type="text" placeholder="Szukaj po nazwie lub opisie…">
+      <select id="dbSelect"><option value="">Wszystkie regiony</option></select>
+      <div id="dbCount"></div>
+    </div>
+    <div class="dbTableWrap">
+      <table id="dbTable">
+        <thead>
+          <tr><th style="width:14%;">Persona</th><th style="width:10%;">Region</th><th style="width:14%;">Typ</th><th style="width:10%;">Obserwujący</th><th>Opis</th><th style="width:8%;">Profil</th></tr>
+        </thead>
+        <tbody id="dbBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer id="kontakt">
+  <div class="wrap fgrid">
+    <div>
+      <div class="brand">121PR</div>
+      <p>Analiza AI Influencer — Social Media, 06.2026.<br>Minisite przygotowana na bazie raportu PDF i bazy Excel.</p>
+    </div>
+    <div>
+      <p><b>Kontakt</b><br>
+      <a href="mailto:paula.kwiatek@121pr.pl">paula.kwiatek@121pr.pl</a><br>
+      <a href="mailto:anna.malczewska@121pr.pl">anna.malczewska@121pr.pl</a></p>
+      <p>ul. Saska 9C, Warszawa<br>+48 22 243 25 59 · <a href="mailto:biuro@121pr.pl">biuro@121pr.pl</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const EXCEL_DATA = [{"name": "Lil Miquela", "region": "globalny", "type": "AI influencer", "followers": "2 280 485", "desc": "To jedna z pierwszych i najbardziej wpływowych AI influencerek na świecie. Została stworzona w 2016 roku przez amerykańską firmę Brud, specjalizującą się w robotyce i sztucznej inteligencji. Choć fizycznie nie istnieje i jest generowana komputerowo (CGI), w mediach społecznościowych wykreowano ją na 19-letnią brazylijsko-amerykańską modelkę, piosenkarkę i aktywistkę mieszkającą w Los Angeles.\nJej profil na Instagramie jest prowadzony jak konto prawdziwej celebrytki z pokolenia Z. Znajdujemy tam modę i styl życia: zdjęcia w realistycznych sceneriach (ulice LA, kawiarnie, studia nagraniowe), na których Miquela prezentuje stylizacje od topowych marek (np. Prada, Calvin Klein, Givenchy) oraz streetwear. Współprace z gwiazdami: fotomontaże, na których \"pozuje\" obok prawdziwych celebrytów, modeli i muzyków (np. Bella Hadid, Rosalía). Promocję twórczości muzycznej: Miquela \"wydaje\" własne single pop/R&B (dostępne m.in. na Spotify), a na Instagramie promuje swoje teledyski i kulisy pracy w studio. Zaangażowanie społeczne: posty wspierające ważne ruchy społeczne, takie jak Black Lives Matter czy prawa społeczności LGBTQ+, co nadaje jej postaci bardziej ludzki, głęboki charakter.\nStorytelling i \"życie prywatne\": Twórcy dbają o dramatyzm jej życia – Miquela przeżywa \"rozstania\", miewa kryzysy tożsamości związane z tym, że jest robotem, i wchodzi w interakcje z innymi wirtualnymi influencerami.", "link": "https://www.instagram.com/lilmiquela/?hl=en", "tag": "Global"}, {"name": "Shudu", "region": "globalny", "type": "AI model", "followers": "236 740", "desc": "Shudu jest znana jako pierwsza na świecie czarnoskóra wirtualna supermodelka. Stworzona w 2017 roku przez fotografa Camerona-Jamesa Wilsona. Koncentruje się na treściach modowych. Jest częścią cyfrowego kolektywu The Diigitals. Jej wizualizacje są dopracowane i artystyczne, ukazując bardziej stylową stronę wirtualnego świata influencerów.", "link": "https://www.instagram.com/shudu.gram", "tag": "Global"}, {"name": "Noonoouri", "region": "globalny", "type": "AI influencer", "followers": "461 059", "desc": "Niemiecka wirtualna influencerka stworzona przez projektanta Joerg Zuber. Charakterystyczna ze względu na kreskówkowy wygląd z dużymi oczami. Publikuje treści związane z modą premium, zrównoważonym rozwojem, prawami zwierząt oraz luksusowym stylem życia. Współpracowała z wieloma światowymi domami mody.", "link": "https://www.instagram.com/noonoouri", "tag": "Global"}, {"name": "Imma", "region": "globalny", "type": "AI influencer", "followers": "380 849", "desc": "Jedna z najbardziej rozpoznawalnych wirtualnych influencerek w Japonii. Znana z charakterystycznych różowych włosów i realistycznych zdjęć osadzonych w tokijskich realiach. Publikuje treści związane z modą, designem, kulturą miejską i technologią.", "link": "https://www.instagram.com/imma.gram/", "tag": "Global"}, {"name": "Lu do Magalu", "region": "brand-owned / Brazylia", "type": "marka-ambasador", "followers": "9 221 761", "desc": "Pierwotnie wirtualna asystenka, potem influencerka i ambasadorka. Publikuje filmy z rozpakowywania produktów, recenzje produktów i porady dotyczące oprogramowania w imieniu firmy, jednej z największych brazylijskich firm handlu detalicznego. Lu można zobaczyć na pasku nawigacyjnym strony internetowej Magalu, w aplikacjach Magalu na Androida i iPhone'a. Jej popularność i zasięg są zarezerwowane dla Brazylii.", "link": "https://www.instagram.com/magazineluiza", "tag": "Brazylia"}, {"name": "Nobody Sausage", "region": "globalny", "type": "AI influencer", "followers": "7 454 356", "desc": "Humorystyczna, rozpoznawalna postać cyfrowa przypominająca tańczącą kiełbaskę, obecna w kampaniach modowych i lifestyle’owych. Profil buduje viralowy, lekki wizerunek z naciskiem na rozrywkę i social buzz.", "link": "https://www.instagram.com/nobodysausage/?hl=en", "tag": "Global"}, {"name": "Aitana Lopez", "region": "globalny / Hiszpania", "type": "AI influencer", "followers": "390 212", "desc": "Influencerka AI z różowymi włosami. Aitana zebrała pochwały za realistyczny, przypominający człowieka wygląd. Powstała ze względu na trudności i ograniczenia, z jakimi twórca Rubén Cruz borykał się w pracy z modelami ludzkimi. Aitana jest przedstawiana jako atrakcyjna 25-latka. Interesuje się fitnessem, grami i modą.", "link": "https://www.instagram.com/fit_aitana/", "tag": "Hiszpania"}, {"name": "GEICO Gecko", "region": "globalny", "type": "AI influencer", "followers": "38 605", "desc": "Wirtualna maskotka marki GEICO, używana jako cyfrowy ambasador i charakterystyczna twarz komunikacji firmy GEICO. Ma postać sympatycznego gekona występującego w reklamach telewizyjnych i internetowych. Jest jednym z najbardziej rozpoznawalnych wirtualnych bohaterów marketingowych na świecie. Łączy rozrywkę z reklamą i świadomością marki.", "link": "https://www.instagram.com/thegeicogecko", "tag": "Global"}, {"name": "Kim Zulu", "region": "globalny", "type": "AI influencer, podcaster", "followers": "3 645", "desc": "Afrykańska wirtualna influencerka promująca modę, kulturę i nowoczesny styl życia, też w formacie podcastu. Jej twórcy wykorzystują postać do prezentowania afrykańskiej kreatywności oraz współprac z markami lifestyle'owymi. Profil komunikuje cyfrową kulturę Gen Z i kreatywny styl życia.", "link": "https://www.instagram.com/kimzulu_/?hl=en", "tag": "Global"}, {"name": "Maie", "region": "china", "type": "AI influencer", "followers": "2 191", "desc": "Wirtualna influencerka modowa obecna w kampaniach lifestyle i sneakers. Jej wizerunek opiera się na cyfrowej estetyce i młodzieżowej energii.", "link": "https://www.instagram.com/maie.io/", "tag": "Chiny"}, {"name": "Maya Gram", "region": "asia", "type": "marka-ambasador", "followers": "6 622", "desc": "Osobny profil stworzony przez markę PUMA. Wspiera komunikację marki poprzez modowy, estetyczny content, wysyła paczki sponsorowane influencerom, kreatorom.", "link": "https://www.instagram.com/mayaaa.gram/", "tag": "Azja"}, {"name": "Rozy", "region": "Południowa Korea / globalny", "type": "AI influencer", "followers": "162 472", "desc": "Twórcy Rozy nadali jej unikalne imię i konkretną historię, aby fani czuli się z nią jak z prawdziwą przyjaciółką. Imię: „Oh Rozy” pochodzi od koreańskiego słowa Oroji, które oznacza „jedyna i niepowtarzalna”. Jest ikoną pokolenia Z, która na zawsze pozostanie 22-latką. Na jej profilu można przeczytać, że uwielbia modę, podróże, skateboarding, jogę i ekologiczny styl życia. Jest znana z niezwykle realistycznej mimiki i póz, które sprawiają, że wygląda jak prawdziwa istota ludzka.\nJuż w pierwszym roku podpisała ponad 100 umów sponsorskich i zarobiła ponad miliard wonów koreańskich (prawie milion dolarów). Nie ogranicza się tylko do modelingu; wydała również własne cyfrowe single muzyczne i chodziła po wirtualnych wybiegach. Działalność charytatywna: Jest ambasadorką dobrej woli Plan International Korea, gdzie wykorzystuje swoją platformę do walki o prawa dziewcząt na całym świecie.", "link": "https://www.instagram.com/rozy.gram/?hl=en", "tag": "Korea"}, {"name": "Ma.ia_ai", "region": "polska", "type": "AI influencer", "followers": "1 739", "desc": "Młoda AI kobieta z charakterystycznymi żółtymi włosami, piegami i kolczykiem w nosie. Otwarcie przedstawia się jako AI i często mowi o tym w swoich filmach. Treści lifestylowe, częste nawiązania do aktualnych wydarzeń na świecie (premiery seriali, filmów, igrzyska olimpijskie).", "link": "https://www.instagram.com/ma.ia_ai/", "tag": "Polska"}, {"name": "Ciocia Wandzia", "region": "polska", "type": "AI influencer", "followers": "87,1K", "desc": "Postać AI kobiety seniorki, bardzo eleganckiej , która dzieli się swoimi zyciowymi radami z odbiorcami. Zwraca się głownie do kobiet.", "link": "https://www.instagram.com/ciocia_wandzia/", "tag": "Polska"}, {"name": "Meta Queen", "region": "polska", "type": "AI influencer", "followers": "22.3K", "desc": "Polska wirtualna influencerka beauty, pokazująca nowoczesny, miejski styl i formaty typowe dla social mediów. Profil jest prowadzony w estetyce cyfrowej osoby z realnym lifestyle’em.", "link": "https://www.tiktok.com/@meta_queen", "tag": "Polska"}, {"name": "Sara Kosmos", "region": "polska", "type": "AI influencer", "followers": "1 214", "desc": "Jej treści obejmują modę, podróże, technologię i codzienny lifestyle. Miała funkcjonować jak współczesna, cyfrowa influencerka z lokalnym kontekstem. Nieaktywna.", "link": "https://www.instagram.com/sara.kosmos/", "tag": "Polska"}, {"name": "Alicja Botowska", "region": "polska", "type": "AI influencer / travel influencer", "followers": "30 797", "desc": "Polska cyfrowa influencerka zaprojektowana jako młoda kobieta zainteresowana modą, nowymi technologiami i kulturą internetową. Jest stewardessą podróżującą po świecie. Ukrywa bycie AI.", "link": "https://www.instagram.com/alicja_botowska/?hl=en", "tag": "Polska"}, {"name": "Daniel Kowalczyk", "region": "polska", "type": "AI Lifestyle Influencer", "followers": "77 731", "desc": "Polski AI influencer z bardzo wysokim zaangażowaniem społeczności. Został stworzony przez studio Heptagon Design. Konto skupia się na treściach lifestyle, podróże, moda.", "link": "https://www.instagram.com/danielkowalczyk_/?hl=en", "tag": "Polska"}, {"name": "vTuber Zero", "region": "polska", "type": "AI vTuber", "followers": "300", "desc": "Vtuber 2D, czyli wirtualny pasjonat gier związany z marką Pepsi. Vtuber prowadził streamy zarówno ze znanymi gamerami takimi jak: Nieuczesna, Awizo, Slayproxx, BlackFireIce, jak i te samotne. Podczas rozgrywek w niespodziewanym momencie opuszczał grę.", "link": "https://www.twitch.tv/maxzero_98", "tag": "Polska"}, {"name": "Alicja w krainie mam", "region": "polska", "type": "AI persona", "followers": "2 645", "desc": "Wirtualna kobieta opisująca swoje przeżycia związane z ciążą i porodem kładąca nacisk na problemy związane z depresją poporodową. Profil aktualnie poświęcony edukacji.", "link": "https://www.instagram.com/p/C6Dp6UatV-p/", "tag": "Polska"}, {"name": "Virtual Colonel", "region": "globalny", "type": "AI persona / ambasador marki", "followers": "-", "desc": "Komputerowo wygenerowana wersja Colonela została stworzona z myślą o odbiorcach z pokolenia Z. Awatar miał charakterystyczną srebrną fryzurę, ułożoną w hipsterskim stylu, starannie wypielęgnowaną brodę, okulary w czarnych oprawkach i kultowy biały garnitur, zaktualizowany, aby wpisywać się w nowoczesne trendy hipsterskie.", "link": "obecność na profilu głównym marki KFC", "tag": "Global"}, {"name": "Juliana Zetici", "region": "globalny", "type": "AI influencer / coach", "followers": "61 325", "desc": "Nagradzana influencerka AI, która działa jako cyfrowa asystentka do spraw randkowania. Często jest opisywana jako „skrzydłowa AI”, która pomaga w miłości, randkach i zrozumieniu ludzkiego przyciągania.Napisała własny poradnik.", "link": "https://www.instagram.com/juliana_zetici/?hl=en", "tag": "Global"}, {"name": "Zinn i RIA - para", "region": "Japonia", "type": "AI influencers", "followers": null, "desc": "Zinn i RIA to japońska para wirtualnych influencerów - prowadzą podobne w stylu osobne profile ale często występują razem i opisują swoją miłość. Przyjaźnią się też z Immą.", "link": "https://www.instagram.com/plusticboy/\nhttps://www.instagram.com/ria_ria_tokyo/", "tag": "Japonia"}, {"name": "Aria Veil", "region": "USA", "type": "AI digital creator", "followers": "750", "desc": "Aria jest bardzo realistycznie wyglądającą AI. W opisie swojej persony: cosplay w weekendy, siłownia w tygodniu, plaża i anime zawsze. Szczerze mówiąc, jestem po prostu wirtualną dziewczyną próbującą ułożyć sobie życie. Nie prowadziła żadnych współprac z markami i jest to mały profil ale wyróżnia się realizmem postaci.", "link": "https://www.instagram.com/theariaveil/?hl=en", "tag": "USA"}, {"name": "Nala Vae", "region": "USA / globalny", "type": "AI persona / marka własna", "followers": "16 632", "desc": "Persona stworzona przez kreatorkę do promocji siebie. Zamysł był taki, żeby awatar umieszczał takie wpisy i zdjęcia z sytuacji które ona sama by tworzyła. Nala umieszcza lifestylowe treści, często z humorystycznym komentarzem nawiązującym do tego, że kreatorka nie spodziewała się takiej popularności swojej kreacji. Nie udaje prawdziwej i nie ukrywa, że jest sztuczna.", "link": "https://www.instagram.com/nala_vae/?hl=en", "tag": "USA"}, {"name": "JUDY", "region": "Filipiny", "type": "AI artist / entertainer", "followers": "446", "desc": "Influencerka AI, piosenkarka i gawędziarka, która niedawno zdobyła 2. miejsce w kategorii AI Entertainer of the Year w konkursie OpenArt × Fanvue AI Personality Awards 2026. Znana z charakterystycznych krótkich różowych włosów i delikatnego, filmowego stylu, opisuje siebie jako „cyfrową duszę z ludzkimi uczuciami”. Dzieli się muzyką, historiami i treściami lifestylowymi. Jest natychmiast rozpoznawalna po estetycznych strojach i jaskraworóżowych włosach. Koncentruje się na szerzeniu pozytywnej energii, opowiadaniu emocjonalnych historii i odkrywaniu ludzkich doświadczeń przez pryzmat cyfrowy.", "link": "https://www.instagram.com/judygoodvibes/?hl=en", "tag": "Filipiny"}, {"name": "ZAIRØ", "region": "Hiszpania", "type": "AI artist", "followers": "22 804", "desc": "Soy_Zairo to znana osobowość cyfrowa, uznana za rozrywkową postać AI. Cotygodniowy zwycięzca globalnych nagród dla osobowości roku AI. Jego profil jest poświęcony rozrywce i promocji \"własnej\" muzyki, prowadzi też kanał na Youtube i Spotify.", "link": "https://www.instagram.com/soy_zairo/?hl=en", "tag": "Hiszpania"}, {"name": "Chloe VS History", "region": "UK / globalny", "type": "AI historic traveller", "followers": "616 653", "desc": "Chloe jest przedstawiona jako młoda Amerykanka zagubiona w czasie, z tatuażami, krótkim topem i nowoczesną estetyką. Chloe pozornie podróżuje w czasie do ważnych wydarzeń historycznych. Niezwykle popularną relację stworzył brytyjski strateg ds. mediów społecznościowych Jonathan Laramy.", "link": "https://www.instagram.com/chloe.vs.history/", "tag": "UK"}, {"name": "Casotulka", "region": "Słowacja", "type": "AI historic traveller", "followers": "29 463", "desc": "Młoda dziewcyna, która podbnie jak Chloe vs History przenosi się w czasie, ale nie tylko! Wykorzystuje również sceny z filmów, gdzie ingeruje w kultowe sceny, pozuje ze znanymi postaciami, bierze udział w światowych wydarzeniach. Bawi się konwencją AI. Zahacza o tematy nostalgii i retro.", "link": "https://www.instagram.com/casotulka/", "tag": "Słowacja"}, {"name": "Alina Vale", "region": "USA / globalny", "type": "AI fashion model", "followers": "3 027", "desc": "Alina jest modelką modową, stworzoną do promocji wirtualnych awatarów. Jej treści są realistyczne, lifestylowe, często pojawiają się \"fejkowe reklamy\" produktów marek z treścią, że to nie jest prawdziwe. Często taguje drugie konto https://www.instagram.com/alinavale.fashion_model/?hl=en&g=5", "link": "https://www.instagram.com/alinavale.model/?hl=en", "tag": "USA"}, {"name": "JAEYOUNG 준재영", "region": "Korea / globalny", "type": "AI Fitness Music Lifestyle Influencer", "followers": "381 070", "desc": "Koreański model fitness, twórca cyfrowy i artysta muzyczny. Został stworzony i jest zarządzany przez kanadyjskiego twórcę cyfrowego, Luca Thierry'ego. Został zaprojektowany tak, aby wyglądać jak uderzająco przystojny, muskularny Koreańczyk o fotorealistycznych rysach twarzy. Regularnie dzieli się poradami fitness, aktualnościami ze stylu życia, selfie z siłowni oraz zdjęciami z maseczkami do pielęgnacji skóry, podróży i spotkań z „przyjaciółmi”. Jest promowany jako muzyk. Wydał album cyfrowy zatytułowany „Pressure”. Na swojej oficjalnej stronie internetowej, jaeyoungjoon.com, fani mogą dołączyć do „Klubu VIP”, aby uzyskać dostęp do ekskluzywnych treści cyfrowych tylko dla członków.", "link": "https://www.instagram.com/jaeyoungjoon/?hl=en", "tag": "Korea"}, {"name": "Wonhoso", "region": "Korea", "type": "AI lifestyle influencer", "followers": "471 689", "desc": "Finalista w kategorii AI Entertainer w konkursie AI Personality of the Year Awards 2026. Postać dzieli się angażującym, estetycznym stylem życia i treściami inspirowanymi K-popem. Iwonhoso zyskał oddaną, realną bazę fanów, którzy wchodzą w interakcję z treściami, często zostawiając komentarze i prowadząc dedykowane strony fanowskie.", "link": "https://www.instagram.com/iwonhoso/?hl=en", "tag": "Korea"}, {"name": "Ilona", "region": "Francja", "type": "Child AI Influencer", "followers": "10 662", "desc": "Profil stworzony na potrzeby promowania twórczości francuskiej piosenkarki Ilony Mitrecey. Zdecydowała się na animowaną postać dziecięcą ze względu na charakter swojej twórczości: tworzy energiczną muzykę techno-pop i eurodance połączoną z piosenkami dla dzieci.", "link": "https://www.instagram.com/ilona/", "tag": "Francja"}, {"name": "Aswathy Achu", "region": "Indie", "type": "AI influencer", "followers": "122 591", "desc": "Jedna z pierwszych AI influencerek w regionie Karali w Indiach. często posługuje się miejscowym językiem malajalam, aby nawiązać kontakt ze swoimi odbiorcami w Kerali. Aktualnie profil skupia się na promocji tworzenia wirtualnych person.", "link": "https://www.instagram.com/aswathy_achu.ai/", "tag": "Indie"}, {"name": "Radhika Subramaniam", "region": "Indie", "type": "AI travel influencer", "followers": "13 417", "desc": "Radhika Subramaniam to pierwsza w Indiach dwujęzyczna influencerka podróżnicza. Stworzona przez Collective Artists Network, dzieli się swoimi cyfrowymi podróżami. Przedstawiona jest jako samotna podróżniczka z pokolenia Z, która rzuciła nudną pracę biurową, aby odkrywać świat. Jest wyjątkowa, ponieważ mówi zarówno po tamilsku, jak i po angielsku. To pomaga jej nawiązywać kontakt z różnymi odbiorcami regionalnymi w całych Indiach. Skupia się na autentycznej kulturze, lokalnym jedzeniu, festiwalach w małych miasteczkach i ukrytych kawiarniach, a nie tylko na luksusowych podróżach.", "link": "https://www.instagram.com/indiawithradhika/?hl=en", "tag": "Indie"}, {"name": "N A I N A", "region": "Indie", "type": "AI influencer", "followers": "376 969", "desc": "Postać AI influencerki ok 20-30 lat z Indii. Lifestyle z pomysłem - poza zdjęciami, od niedawna pojawiają się reelsy ze storytellingiem. Otwarta komunikacja o AI.  International Iconic AI Influencer 2024. Aktywna również na YouTube gdzie obserwuje ją ponad pół miliona subskrybentów.", "link": "https://www.instagram.com/naina_avtr/?hl=en", "tag": "Indie"}, {"name": "K Y R A ✨", "region": "Indie", "type": "AI influencer", "followers": "234 702", "desc": "Kyra to 22-letnia modelka-robot z Mumbaju w Indiach. Jest produktem pierwszej indyjskiej firmy tworzącej wirtualne postacie, FUTR Studios, założonej przez George'a Thariana i Himanshu Goela. Obecność Kyry w internecie otworzyła nowe możliwości marketingowe dla wielu indyjskich marek i firm. Ponadto Kyra przyczyniła się do wzrostu globalnej rozpoznawalności indyjskich technologii i wirtualnych influencerów. Profil nie wyróżnia się jednak niczym szczególnym od innych wirtualnych modelek/influencerek.", "link": "https://www.instagram.com/kyraonig/", "tag": "Indie"}, {"name": "Milla Sofia", "region": "globalny", "type": "AI artist / singer", "followers": "603 789", "desc": "Przedstawiono ją jako 24-letnią wirtualną dziewczynę. Milla jest również aktywna na YouTube, gdzie publikuje krótkie filmy. Jej kanał na YouTube ma ponad 13 800 subskrybentów. Milla Sofia wykorzystuje swoją platformę, wyrażając swoje poparcie dla organizacji takich jak UNICEF. Jej udana obecność w mediach społecznościowych utorowała drogę do połączenia piękna i technologii.", "link": "https://www.instagram.com/millasofiafin/", "tag": "Global"}, {"name": "Qai Qai", "region": "US / globalny", "type": "Lalka Alexis Olympia Ohanian, córki Sereny Williams i współzałożycielki Reddit", "followers": "307 373", "desc": "Pierwotnie stworzona jako żart i cyfrowe rozwinięcie lalki Olympii Ohanian – córki Sereny Williams i współzałożyciela Reddita, Alexisa Ohaniana. Qai Qai ożyła cyfrowo i od tego czasu ewoluowała w niezależne zjawisko kulturowe i markę dziecięcą (książki dla dzieci, cyfrowe wydania muzyczne i zabawki).", "link": "https://www.instagram.com/realqaiqai/", "tag": "USA"}, {"name": "Yang Mun", "region": "globalny", "type": "AI influencer", "followers": "1 189 764", "desc": "Buddyjski mnich, który dzieli się życiowymi przemysleniami i radami dla zdrowego życia (wewnetrznego). Profil monetyzuje rozpozwawalnosć sprzedając e-book oraz kurs 30dniowego uzdrawiania. Na kreacjach występuje tylko jego postać. Siedziba w US, tak samo domena na którym postawiony jest blog.", "link": "https://www.instagram.com/itsyangmuns/?hl=en", "tag": "Global"}, {"name": "Contessa Alicia", "region": "globalny", "type": "AI influencer", "followers": "54 960", "desc": "Włoszka, która cieszy się życiem po 50tce. Dzieli się przemyśleniami, dobrymi radami jak żyć lekko, o modzie i relacjach,  zawsze z kieliszkiem wykwintnego alkoholu i w dopracownaym, eleganckim stroju. Mówi bezpośrednio do użytkownika, zazwyczaj zaczynając tak samo: 'Darling'. Monetyzacja poprzez sprzedaż e-booka oraz połaczenie z magazynem online dla kobiet 50+ o modzie i stylu życia z połączeniem do zakupów (zewnętrzne linki do proponowanych stylizacji)", "link": "https://www.instagram.com/lacontessaalicia/", "tag": "Global"}, {"name": "Ana Zelu i Mia Zelu (AI siostry)", "region": "globalny", "type": "AI influencer", "followers": "311 700", "desc": "Influencerka Ai która swój content opiera głownie na zdjęciach/karuzelach lifestyle oraz fashion. Zdjęcia 'selfie' w różnych  miejscach, rzadko z innymi 'osobami' z krótkim sytuacyjnym copy. Ma siostrę AI Mia Zelu, której profil jest analogiczny.", "link": "https://www.instagram.com/anazelu/", "tag": "Global"}, {"name": "Daisy Yoox", "region": "globalny / Włochy", "type": "AI ambasador marki", "followers": "-", "desc": "W 2022 roku marka Yoox stworzyła Daisy, przypominającą aktorkę Hannah Gross ambasadorkę, która wiedzie życie w luksusie. Regularnie podróżuje, nosi tylko najmodniejsze ubrania i spędza cały czas z modelkami i liderkami w branży modowej. Jest na szczycie wirtualnego świata. Nie miała własnego profilu.", "link": "https://www.instagram.com/Yoox", "tag": "Włochy"}, {"name": "Phoenix McEwan", "region": "globalny / UK", "type": "AI influencer / NIEAKTYWNY", "followers": "8 855", "desc": "Phoenix wkroczył do świata wirtualnych influencerów w 2019 roku. Był wirtualnym kierowcą wyścigowym z Londynu. Jego celem w świecie wirtualnym i realnym był udział w konkurencyjnych seriach wyścigowych, zdobycie tytułu mistrza świata w świecie wyścigów i uzyskanie wsparcia od czołowych producentów. Poza wyścigami, Phoenix poświęcał czas słuchaniu muzyki elektronicznej i gamingowi.", "link": "https://www.instagram.com/phoenixmcewan/", "tag": "UK"}, {"name": "CB of Casas Bahia", "region": "Brazylia", "type": "AI ambasador marki / BRAK WŁASNEGO PROFILU", "followers": "-", "desc": "CB to wirtualna postać Casas Bahia, jednej z największych marek detalicznych w Brazylii.\nZanim został nazwany CB, znany był jako Bahianinho – maskotka marki, niezwykle znana w całym kraju, stanowiąca niemal narodowe dziedzictwo kulturowe. Później przeszedł proces redesignu i z dziecka stał się nastolatkiem.\nCB pasjonuje się grami, zrównoważonym rozwojem, kulturą młodzieżową oraz poznawaniem Brazylii i jej sekretów. To niezwykle energiczny chłopiec, który w niecały rok stał się już gwiazdą w mediach społecznościowych marki dzięki swojej zabawnej i serdecznej osobowości.", "link": "https://www.instagram.com/casasbahia/", "tag": "Brazylia"}, {"name": "Leya Love", "region": "globalny", "type": "AI influencer", "followers": "499 668", "desc": "Leya Love jest aktywną orędowniczką planety Ziemi. Na swoim koncie prowadzi rozmowy o naturze z prawdziwymi ekologami i podnosi świadomość na temat jej znaczenia. Szwajcarska firma medialna Cosmiq Universe AG dała Leyi Love życie.", "link": "https://www.instagram.com/leyalovenature/?hl=en", "tag": "Global"}, {"name": "Granny Spills", "region": "globalny", "type": "AI influencer / comedian", "followers": "2 046 092", "desc": "Zyskała popularność dzięki udzielaniu trafnych, szczerych porad dotyczących randek i finansów. Opisywana jako połączenie Elle Woods i Reginy George po osiemdziesiątce, regularnie nosi różowe, designerskie garnitury i może pochwalić się milionami obserwujących.", "link": "https://www.instagram.com/grannyspills/", "tag": "Global"}, {"name": "Tacy", "region": "UK", "type": "marka-ambasador / BRAK WŁASNEGO PROFILU", "followers": "-", "desc": "TACY ewoluowała z cyfrowego asystenta obsługi klienta w fotorealistycznego prezentera treści marki, upraszczając ofertę Thomasa Cooka w łatwe do strawienia treści, jednocześnie opierając się na zaufaniu Thomasa Cooka. Nie ma własnego profilu w mediach społecznościowych.", "link": "https://www.instagram.com/thomascook_koramangala/", "tag": "UK"}, {"name": "Naomi", "region": "Holandia", "type": "AI persona / marka własna / szkolenia / \"Faceless Digital Marketing\"", "followers": "1 014", "desc": "Jedno z wielu kont typu \"Faceless Digital Marketing\". Persona stworzona przez kreatorkę pokazania innym mamom lub osobom, że przy odpowiedniej motywacji da się przebranżowić i zarabiać online duże pieniądze. Stworzyła do tego celu wirtualną postać i pokazuje, że warto nauczyć się AI by zarabiać \"pos swojemu\" bez pokazywania twarzy. Dużo nawiązuje do macierzyństwa.", "link": "https://www.instagram.com/baristadigitalincome/?g=5", "tag": "Holandia"}, {"name": "Daisy, an AI ‘Granny’", "region": "UK", "type": "AI persona", "followers": "-", "desc": "Wirtualna „babcia” stworzona do walki z oszustwami telefonicznymi. Jej zadaniem było prowadzenie rozmów z oszustami i marnowanie ich czasu poprzez realistyczne, ale fikcyjne konwersacje, chroniąc potencjalne ofiary przed wyłudzeniami.", "link": "-", "tag": "UK"}, {"name": "ABA WILS", "region": "Ghana", "type": "AI influencer", "followers": "3 283", "desc": "Pierwsza wirtualna influencerka Afryki powstała w 2019 roku. Pochodzi z Ghany i jest wszechstronnie utalentowaną twórczynią cyfrową. Z biegiem lat rozszerzyła swoją działalność cyfrową, od modelingu, przez produkcję muzyczną, po globalną działalność rzeczniczą. FRzecznictwo i zaangażowanie społeczne: Aba regularnie wykorzystuje swoją platformę do przekazywania celowych komunikatów, w tym w kampaniach opisanych przez magazyn RED•EYE, skupiających się na edukacji cyfrowej i promowaniu zdrowia kobiet.", "link": "https://www.instagram.com/abawils/", "tag": "Ghana"}, {"name": "AI_testkitchen", "region": "Global", "type": "AI content / NIEAKTYWNY", "followers": "43 949", "desc": "Influencer wykorzystujacy AI do tworzena wizualizacji gotowanych dań (od początku do końca procesu). Bardzo dobry feedback społeczności. Przepisy tworzone przez chatGPT i pokazywane dzięki AI.", "link": "https://www.instagram.com/ai_testkitchen/?hl=en", "tag": "Global"}, {"name": "aliona_pole", "region": "Rosja", "type": "AI influencer", "followers": "27 018", "desc": "Głownie śpiew, taniec lub lipsinc - mało treści mówionych. Charakterystyczna młoda kobieta z krotkimi włosami.", "link": "https://www.instagram.com/aliona_pole/", "tag": "Rosja"}];
+
+// ---------- persona rendering ----------
+function statHtml(stats){
+  return Object.entries(stats).map(([k,v])=>`<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+}
+function bulletsHtml(arr){
+  return arr.map(b=>`<li>${b}</li>`).join('');
+}
+function slideLinks(slides){
+  return slides.map(s=>`<a class="btn" href="#" onclick="openLB(${s});return false;" style="padding:6px 10px;">#${s}</a>`).join(' ');
+}
+function renderPersonaCard(p){
+  const avatarHtml = p.avatar
+    ? `<img class="avatar" src="${p.avatar}" alt="Avatar: ${p.name}" loading="lazy">`
+    : `<div class="avatar placeholder">${p.name.charAt(0)}</div>`;
+  return `
+  <div class="pcard" data-tag="${p.tag}">
+    <div class="pctop">
+      <div class="tagrow"><span class="tag">${p.tag}</span><span class="start">start: ${p.start}</span></div>
+      <div class="headrow">
+        ${avatarHtml}
+        <div>
+          <h3>${p.name}</h3>
+        </div>
+      </div>
+      <p class="persona-desc">${p.desc}</p>
+    </div>
+    <div class="statgrid">${statHtml(p.stats)}</div>
+    <details>
+      <summary>Treści i strategia</summary>
+      <ul class="bullets">${bulletsHtml(p.bullets)}</ul>
+    </details>
+    ${p.highlights ? `<details><summary>Współprace / sukcesy</summary><p style="margin:12px 0 0; font-size:13.5px; color:var(--ink-soft);">${p.highlights}</p></details>` : ''}
+    ${p.trend ? `<div class="trendnote">📈 ${p.trend}</div>` : ''}
+    <div class="cardfoot">
+      <a class="btn primary" href="${p.link}" target="_blank" rel="noopener">Profil ↗</a>
+      <span class="btn" style="cursor:pointer;" onclick="openLB(${p.slides[0]})">Slajd źródłowy</span>
+    </div>
+  </div>`;
+}
+function renderPersonas(filter){
+  const grid = document.getElementById('personaGrid');
+  const items = filter ? PERSONAS.filter(p=>p.tag===filter) : PERSONAS;
+  grid.innerHTML = items.map(renderPersonaCard).join('');
+}
+function renderChips(){
+  const tags = ['Wszystkie', ...new Set(PERSONAS.map(p=>p.tag))];
+  const bar = document.getElementById('personaChips');
+  bar.innerHTML = tags.map((t,i)=>`<button class="chip ${i===0?'active':''}" data-tag="${t==='Wszystkie'?'':t}">${t}</button>`).join('');
+  bar.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      bar.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderPersonas(chip.dataset.tag);
+    });
+  });
+}
+renderChips();
+renderPersonas('');
+
+// ---------- lightbox ----------
+function openLB(n){
+  const num = String(n).padStart(2,'0');
+  document.getElementById('lbimg').src = `slides/slide_${num}.jpg`;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLB(){ document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLB(); });
+document.getElementById('lbimg').addEventListener('click', e=>e.stopPropagation());
+
+// ---------- excel database ----------
+function truncate(s, n){ return s.length>n ? s.slice(0,n).trim()+'…' : s; }
+function renderDbRows(list){
+  const body = document.getElementById('dbBody');
+  document.getElementById('dbCount').textContent = list.length + ' / ' + EXCEL_DATA.length + ' pozycji';
+  body.innerHTML = list.map(d=>{
+    const short = truncate(d.desc, 140);
+    const needsMore = d.desc.length > 140;
+    return `<tr>
+      <td class="namecell">${d.name}</td>
+      <td class="regioncell">${d.region || '—'}</td>
+      <td class="regioncell">${d.type || '—'}</td>
+      <td class="regioncell" style="font-weight:600;color:var(--ink);">${d.followers || '—'}</td>
+      <td class="desccell">
+        <span class="short">${short}</span>
+        <span class="full">${d.desc}</span>
+        ${needsMore ? '<button class="moreBtn" onclick="this.parentElement.classList.toggle(\'expanded\')">więcej</button>' : ''}
+      </td>
+      <td class="linkcell">${d.link ? `<a href="${d.link}" target="_blank" rel="noopener">profil ↗</a>` : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+function populateDbSelect(){
+  const sel = document.getElementById('dbSelect');
+  const tags = [...new Set(EXCEL_DATA.map(d=>d.tag))].sort();
+  tags.forEach(t=>{
+    const opt = document.createElement('option');
+    opt.value = t; opt.textContent = t;
+    sel.appendChild(opt);
+  });
+}
+function filterDb(){
+  const q = document.getElementById('dbSearch').value.toLowerCase();
+  const tag = document.getElementById('dbSelect').value;
+  const list = EXCEL_DATA.filter(d=>{
+    const matchQ = !q || d.name.toLowerCase().includes(q) || (d.desc||'').toLowerCase().includes(q);
+    const matchTag = !tag || d.tag === tag;
+    return matchQ && matchTag;
+  });
+  renderDbRows(list);
+}
+populateDbSelect();
+renderDbRows(EXCEL_DATA);
+document.getElementById('dbSearch').addEventListener('input', filterDb);
+document.getElementById('dbSelect').addEventListener('change', filterDb);
+
+// ---------- nav scroll-spy + mobile close on click ----------
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#navlinks a');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(l=>l.classList.remove('active'));
+      const active = document.querySelector(`#navlinks a[href="#${entry.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+}, {rootMargin:'-40% 0px -50% 0px'});
+sections.forEach(s=>io.observe(s));
+navLinks.forEach(l=>l.addEventListener('click', ()=>{
+  document.getElementById('navlinks').classList.remove('open');
+}));
+</script>
+
+</body>
+</html>
